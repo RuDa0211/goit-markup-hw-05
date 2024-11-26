@@ -602,7 +602,7 @@ a {
     min-width: 165px;
     height: 40px;
     background: #4d5ae5;
-    cursor: pointer
+    cursor: pointer;
 
     font-family: "Roboto", sans-serif;
     font-weight: 500;
@@ -723,6 +723,10 @@ a {
 
 .modal-form-field {
     margin-bottom: 8px;
+}
+
+.modal-form-field-comment{
+    margin-bottom: 16px
 }
 
 .modal-form-label {
