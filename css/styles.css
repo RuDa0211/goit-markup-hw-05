@@ -534,8 +534,13 @@ a {
     margin-bottom: 16px;
 }
 
-.footer-form {
+.footer-wrapper {
     margin-left: auto;
+}
+
+.footer-form{
+    display: flex;
+    gap: 24px;
 }
 
 .footer-form-text {
@@ -563,10 +568,20 @@ a {
     outline: transparent;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    padding-left: 16px;
+    color: #ffffff;
+
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition-property: border, box-shadow;
 
     margin-right: 24px;
+}
+
+.footer-form-input::placeholder{
+    color: #ffffff;
 }
 
 .footer-form-input:focus {
@@ -581,17 +596,18 @@ a {
     flex-direction: row;
     margin-left: auto;
     margin-right: auto;
-
     flex-direction: row;
     border-radius: 4px;
     padding: 8px 24px;
-    width: 165px;
+    min-width: 165px;
     height: 40px;
     background: #4d5ae5;
+    cursor: pointer
 
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1.5;
     letter-spacing: 0.04em;
     text-align: center;
     color: #fff;
@@ -618,8 +634,8 @@ a {
     visibility: hidden;
     pointer-events: none;
 
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: opacity, visability;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);;
 }
 
 
@@ -654,6 +670,7 @@ a {
 
 .modal-btn {
     position: absolute;
+    cursor: pointer;
     top: 24px;
     right: 24px;
     width: 24px;
@@ -666,13 +683,12 @@ a {
     background-color: #e7e9fc;
     border: 1px solid rgba(0, 0, 0, 0.1);
 
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: border-color, background-color;
+    transition: transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn:hover,
 .modal-btn:focus {
-    border-color: #404bbf;
+    border: none;
     background-color: #404bbf;
 }
 
@@ -706,14 +722,14 @@ a {
 }
 
 .modal-form-field {
-    margin-bottom: 26px;
+    margin-bottomcomment
 }
 
 .modal-form-label {
     display: block;
     margin-bottom: 4px;
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
 }
@@ -731,12 +747,11 @@ a {
     border: 1px solid rgba(46, 47, 66, 0.4);
     outline: transparent;
 
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: border, box-shadow;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-input:focus-visible {
-    border: 1px solid #4d5ae5;
+    border-color: #4d5ae5;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
@@ -754,7 +769,7 @@ a {
     fill: #4d5ae5;
 }
 
-.modal-form-message {
+.modal-form-comment {
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     width: 360px;
@@ -763,21 +778,28 @@ a {
     padding-top: 8px;
     resize: none;
     outline: transparent;
+    background-color: transparent;
+    padding: 8px 16px;
 
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: border-color, box-shadow;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-message:focus-visible {
     border-color: #4d5ae5;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-.modal-form-agreement {}
+.modal-form-agreement {
+    margin-bottom: 24px;
+}
 
 .modal-form-agreement-text {
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
 }
@@ -792,14 +814,15 @@ a {
     border: 1px solid rgba(46, 47, 66, 0.4);
     margin-right: 8px;
     cursor: pointer;
+    fill: transparent;
 
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: background-color, border-color;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 input[type='checkbox']:checked+.modal-form-agreement-text .modal-form-checkbox {
     background-color: #404bbf;
-    border-color: none;
+    border: none;
     fill: #f4f4fd;
 }
 
@@ -833,6 +856,7 @@ input[type='checkbox']:checked+.modal-form-agreement-text>.modal-form-checkbox>.
 }
 
 .submit-btn {
+    cursor: pointer;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -845,15 +869,19 @@ input[type='checkbox']:checked+.modal-form-agreement-text>.modal-form-checkbox>.
     letter-spacing: 0.04em;
     text-align: center;
     color: #fff;
+
     border-radius: 4px;
     border: none;
     padding: 16px 32px;
-    width: 169px;
+    min-width: 169px;
     height: 56px;
     margin-top: 24px;
+    
 
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     background: #4d5ae5;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* #endregion */
